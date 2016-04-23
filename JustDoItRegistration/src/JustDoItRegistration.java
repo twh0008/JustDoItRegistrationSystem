@@ -1,7 +1,7 @@
 
-import reg.controllers.LoginController;
-import reg.models.LoginModel;
-import reg.views.LoginView;
+import registration.login.LoginController;
+import registration.login.LoginModel;
+import registration.login.LoginView;
 
 	public class JustDoItRegistration {
 
