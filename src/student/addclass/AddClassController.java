@@ -8,7 +8,6 @@ public class AddClassController{
 	private AddClassView addClassView;
 	private AddClassModel addClassModel;
 
-	
 	public AddClassController(AddClassView addClassView, AddClassModel addClassModel){
 		this.addClassView = addClassView;
 		this.addClassModel = addClassModel;
