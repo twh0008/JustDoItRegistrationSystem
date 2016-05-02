@@ -19,6 +19,8 @@ public class AddCourseListener implements ActionListener {
 		AddCourseView view = new AddCourseView();
 		AddCourseModel model = new AddCourseModel();
 		AddCourseController control = new AddCourseController(view, model);
+		
+		view.setVisible(true);
 
 	}
 

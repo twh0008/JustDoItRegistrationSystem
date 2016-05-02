@@ -14,18 +14,50 @@ public class LoginView extends JFrame {
 	private JButton btLogin = new JButton("Login");
 	
 	public LoginView(){
-		JPanel loginPanel = new JPanel();
+		super("JustLogIn");
+		JPanel loginPanel = new JPanel(new GridBagLayout());
+		GridBagConstraints constraints = new GridBagConstraints();
+		constraints.anchor = GridBagConstraints.WEST;
+		constraints.insets = new Insets(10, 10, 10, 10);
+		constraints.gridx = 0;
+		constraints.gridy = 0;
+		loginPanel.add(lbUsername, constraints);
 		
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setSize(800, 200);
-
-		loginPanel.add(lbUsername);
-		loginPanel.add(_username);
-		loginPanel.add(lbPassword);
-		loginPanel.add(_password);
-		loginPanel.add(btLogin);
+		constraints.gridx = 1;
+		loginPanel.add(_username, constraints);
 		
-		this.add(loginPanel);
+		constraints.gridx = 0;
+		constraints.gridy = 1;
+		loginPanel.add(lbPassword, constraints);
+		
+		constraints.gridx = 1;
+		loginPanel.add(_password, constraints);
+		
+		constraints.gridx = 0;
+		constraints.gridy = 2;
+		constraints.gridwidth = 2;
+		constraints.anchor = GridBagConstraints.CENTER;
+		loginPanel.add(btLogin, constraints);
+		
+		//border
+		loginPanel.setBorder(BorderFactory.createTitledBorder(
+				BorderFactory.createEtchedBorder(), "Login Panel"));
+		
+		add(loginPanel);
+		pack();
+		setLocationRelativeTo(null);
+		
+		
+//		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		this.setSize(800, 200);
+//
+//		loginPanel.add(lbUsername);
+//		loginPanel.add(_username);
+//		loginPanel.add(lbPassword);
+//		loginPanel.add(_password);
+//		loginPanel.add(btLogin);
+//		
+//		this.add(loginPanel);
 		
 	}
 	
