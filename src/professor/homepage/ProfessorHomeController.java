@@ -1,4 +1,4 @@
-package Professor.homepage;
+package professor.homepage;
 
 import javax.swing.JButton;
 

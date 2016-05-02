@@ -1,10 +1,10 @@
-package Professor.homepage;
+package professor.homepage;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import Professor.ViewPSchedule.*;
-//import Professor.viewpschedule
+import professor.ViewPSchedule.*;
+
 import support.Professor;
 
 public class ViewPScheduleListener implements ActionListener {

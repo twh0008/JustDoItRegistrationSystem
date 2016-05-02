@@ -1,4 +1,4 @@
-package Professor.entergrades;
+package professor.entergrades;
 
 public class EnterGradesController {
 	private EnterGradesView view;

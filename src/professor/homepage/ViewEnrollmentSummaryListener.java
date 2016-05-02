@@ -1,10 +1,10 @@
-package Professor.homepage;
+package professor.homepage;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-import Professor.viewenrollmentsummary.*;
+import professor.viewenrollmentsummary.*;
 import support.Professor;
 
 public class ViewEnrollmentSummaryListener implements ActionListener {

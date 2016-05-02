@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import admin.homepage.*;
-import Professor.homepage.*;
+import professor.homepage.*;
 import student.homepage.*;
 import support.*;
 

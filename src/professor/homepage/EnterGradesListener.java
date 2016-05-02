@@ -1,9 +1,9 @@
-package Professor.homepage;
+package professor.homepage;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import Professor.entergrades.*;
+import professor.entergrades.*;
 import support.Professor;
 
 public class EnterGradesListener implements ActionListener {
