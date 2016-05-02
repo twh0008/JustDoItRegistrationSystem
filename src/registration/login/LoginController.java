@@ -3,8 +3,14 @@ package registration.login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import admin.homepage.AdminView;
+import professor.homepage.ProfessorView;
 import student.homepage.StudentHomeController;
 import student.homepage.StudentView;
+import support.Administrator;
+import support.Professor;
+import support.Student;
+import support.User;
 
 
 
@@ -36,29 +42,44 @@ public class LoginController {
 				loginModel.setUsername(username);
 				
 				
-				int usertype = loginModel.verifyAccount();
-				
-				switch(usertype){
-				
-					case 2:
-						loginView.dispose();
-						StudentView view = new StudentView();
-						StudentHomeController controller = new StudentHomeController(view);
-						view.setVisible(true);
-						break;
-					case 1:
-						// PROFESSOR
-						break;
-					case 0:
-						// ADMIN
-						break;
-					case -1:
-						loginView.clearUsername();
-						loginView.clearPassword();
-						loginView.displayError("Username and Password Invalid");
-						break;
+				User user = loginModel.verifyAccount();
+				if(user == null){
+					loginView.clearUsername();
+					loginView.clearPassword();
+					loginView.displayError("Username and Password Invalid");
 				}
+				else{
+					switch(user.getUserType()){
 				
+						case 2:
+							loginView.dispose();
+							Student std = (Student) user;
+							StudentView view = new StudentView();
+							StudentHomeController controller = new StudentHomeController(view, std);
+							view.setVisible(true);
+							break;
+						case 1:
+							/*
+							loginView.dispose();
+							Professor prof = (Professor) user;
+							ProfessorView view = new ProfessorView();
+							ProfessorHomeController controller = new StudentHomeController(view, view);
+							view.setVisible(true);
+							*/
+							break;
+						case 0:
+							/*
+							loginView.dispose();
+							Administrator admin = (Administrator) user;
+							AdminView view = new AdminView();
+							AdminHomeController controller = new StudentHomeController(view, admin);
+							view.setVisible(true);
+							*/
+							break;
+						default:
+							break;
+					}
+				}
 					
 			}
 			catch(IllegalArgumentException ex){

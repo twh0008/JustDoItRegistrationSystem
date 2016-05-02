@@ -3,9 +3,16 @@ package student.homepage;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ViewRegistrationStatusListener implements ActionListener {
+import support.Student;
+import support.User;
 
+public class ViewRegistrationStatusListener implements ActionListener {
+	private Student user;
 	
+	public ViewRegistrationStatusListener(Student user) {
+		this.user = user;
+	}
+
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 

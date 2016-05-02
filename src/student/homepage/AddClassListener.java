@@ -6,10 +6,16 @@ import javax.swing.*;
 import student.addclass.AddClassController;
 import student.addclass.AddClassModel;
 import student.addclass.AddClassView;
+import support.Student;
+import support.User;
 
 import java.awt.event.ActionListener;
 
 public class AddClassListener implements ActionListener{
+	private Student user;
+	public AddClassListener(Student user) {
+		this.user = user;
+	}
 
 	public void actionPerformed(ActionEvent ae) {
 		System.out.println("Button CLicked in add");

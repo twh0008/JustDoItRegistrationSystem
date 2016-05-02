@@ -6,17 +6,15 @@ public class Student extends User {
 	private int credits;
 	private double gpa;
 	private Schedule schedule;
-	private double courseGrades[];
 	
 	
 	public Student(String firstName, String lastName, String username, String password, int userType, int userId,
-			boolean regStatus, int credits, double gpa, Schedule schedule, double[] courseGrades) {
+			boolean regStatus, int credits, double gpa, Schedule schedule) {
 		super(firstName, lastName, username, password, userType, userId);
 		this.regStatus = regStatus;
 		this.credits = credits;
 		this.gpa = gpa;
 		this.schedule = schedule;
-		this.courseGrades = courseGrades;
 	}
 
 	public boolean isRegStatus() {
@@ -51,11 +49,4 @@ public class Student extends User {
 		this.schedule = schedule;
 	}
 	
-	public double[] getCourseGrades() {
-		return courseGrades;
-	}
-	
-	public void setCourseGrades(double courseGrades[]) {
-		this.courseGrades = courseGrades;
-	}
 }
