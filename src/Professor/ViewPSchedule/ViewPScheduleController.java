@@ -1,4 +1,4 @@
-package Professor.ViewPSchedule;
+package professor.ViewPSchedule;
 
 public class ViewPScheduleController {
 	private ViewPScheduleView view;
