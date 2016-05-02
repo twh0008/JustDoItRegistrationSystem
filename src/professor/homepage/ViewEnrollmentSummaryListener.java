@@ -1,14 +1,26 @@
-package professor.homepage;
+package Professor.homepage;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+import Professor.viewenrollmentsummary.*;
+import support.Professor;
+
 public class ViewEnrollmentSummaryListener implements ActionListener {
+private Professor user;
 
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+public ViewEnrollmentSummaryListener(Professor user) {
+	this.user = user;
 
-	}
+}
+
+public void actionPerformed(ActionEvent ae) {
+	System.out.println("Button Pressed");
+	ViewEnrollmentSummaryView view = new ViewEnrollmentSummaryView();
+	ViewEnrollmentSummaryModel model = new ViewEnrollmentSummaryModel();
+	ViewEnrollmentSummaryController control = new ViewEnrollmentSummaryController(view, model);
+}
+
 
 }

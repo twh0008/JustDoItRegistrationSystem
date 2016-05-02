@@ -1,4 +1,4 @@
-package professor.viewenrollmentsummary;
+package Professor.viewenrollmentsummary;
 
 public class ViewEnrollmentSummaryModel {
 

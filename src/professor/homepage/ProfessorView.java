@@ -1,4 +1,4 @@
-package professor.homepage;
+package Professor.homepage;
 
 import java.awt.event.ActionListener;
 

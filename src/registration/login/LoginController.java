@@ -3,14 +3,10 @@ package registration.login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import admin.homepage.AdminView;
-import professor.homepage.ProfessorView;
-import student.homepage.StudentHomeController;
-import student.homepage.StudentView;
-import support.Administrator;
-import support.Professor;
-import support.Student;
-import support.User;
+import admin.homepage.*;
+import Professor.homepage.*;
+import student.homepage.*;
+import support.*;
 
 
 
@@ -54,27 +50,27 @@ public class LoginController {
 						case 2:
 							loginView.dispose();
 							Student std = (Student) user;
-							StudentView view = new StudentView();
-							StudentHomeController controller = new StudentHomeController(view, std);
-							view.setVisible(true);
+							StudentView sView = new StudentView();
+							StudentHomeController sController = new StudentHomeController(sView, std);
+							sView.setVisible(true);
 							break;
 						case 1:
-							/*
+							
 							loginView.dispose();
 							Professor prof = (Professor) user;
-							ProfessorView view = new ProfessorView();
-							ProfessorHomeController controller = new StudentHomeController(view, view);
-							view.setVisible(true);
-							*/
+							ProfessorView pView = new ProfessorView();
+							ProfessorHomeController pController = new ProfessorHomeController(pView, prof);
+							pView.setVisible(true);
+							
 							break;
 						case 0:
-							/*
+							
 							loginView.dispose();
 							Administrator admin = (Administrator) user;
 							AdminView view = new AdminView();
-							AdminHomeController controller = new StudentHomeController(view, admin);
+							AdminHomeController controller = new AdminHomeController(view, admin);
 							view.setVisible(true);
-							*/
+							
 							break;
 						default:
 							break;

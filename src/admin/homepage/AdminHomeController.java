@@ -1,18 +1,22 @@
 package admin.homepage;
 
+import support.Administrator;
+
 public class AdminHomeController {
 
 	private AdminView adminView;
+	private Administrator user;
 	
-	public AdminHomeController(AdminView adminView){
+	public AdminHomeController(AdminView v, Administrator a){
 		
-		this.adminView = adminView;
+		this.adminView = v;
+		this.user = a;
 		
-		this.adminView.addAddCourseListener(new AddCourseListener());
-		this.adminView.addRemoveCourseListener(new RemoveCourseListener());
-		this.adminView.addRemoveUsersListener(new RemoveUsersListener());
-		this.adminView.addAddUsersListener(new AddUsersListener());
-		this.adminView.addUpdateRegistrationStatusListener(new UpdateRegistrationStatusListener());
+		this.adminView.addAddCourseListener(new AddCourseListener(user));
+		this.adminView.addRemoveCourseListener(new RemoveCourseListener(user));
+		this.adminView.addRemoveUserListener(new RemoveUserListener(user));
+		this.adminView.addAddUserListener(new AddUserListener(user));
+		this.adminView.addUpdateRegistrationStatusListener(new UpdateRegistrationStatusListener(user));
 		
 	}
 }
