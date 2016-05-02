@@ -38,6 +38,13 @@ public class LoginView extends JFrame {
 		if(_password.getPassword().length == 0) throw new IllegalArgumentException();
 		return _password.getPassword();
 	}
+	public void clearUsername() {
+		_username.setText("");
+	}
+	
+	public void clearPassword() {
+		_password.setText("");
+	}
 	
 	public void addNewLoginListener(ActionListener listenForLoginButton){
 		btLogin.addActionListener(listenForLoginButton);

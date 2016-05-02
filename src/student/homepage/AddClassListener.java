@@ -12,7 +12,6 @@ import java.awt.event.ActionListener;
 public class AddClassListener implements ActionListener{
 
 	public void actionPerformed(ActionEvent ae) {
-		System.out.println("Count of listeners: " + ((JButton) ae.getSource()).getActionListeners().length);
 		System.out.println("Button CLicked in add");
 		AddClassView view = new AddClassView();
 		AddClassModel model = new AddClassModel();

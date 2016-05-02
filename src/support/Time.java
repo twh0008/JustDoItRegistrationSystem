@@ -1,3 +1,4 @@
+package support;
 
 public class Time {
 	private int weekDay;

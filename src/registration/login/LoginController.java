@@ -29,17 +29,36 @@ public class LoginController {
 			String username = ""; 
 			char[] password;
 			try{
-				System.out.println("Button Clicked");
 				username = loginView.getUsername();
 				password = loginView.getPassword();
 				
 				loginModel.setPassword(password);
 				loginModel.setUsername(username);
-				loginView.dispose();
+				
+				
 				int usertype = loginModel.verifyAccount();
-				StudentView view = new StudentView();
-				StudentHomeController controller = new StudentHomeController(view);
-				view.setVisible(true);
+				
+				switch(usertype){
+				
+					case 2:
+						loginView.dispose();
+						StudentView view = new StudentView();
+						StudentHomeController controller = new StudentHomeController(view);
+						view.setVisible(true);
+						break;
+					case 1:
+						// PROFESSOR
+						break;
+					case 0:
+						// ADMIN
+						break;
+					case -1:
+						loginView.clearUsername();
+						loginView.clearPassword();
+						loginView.displayError("Username and Password Invalid");
+						break;
+				}
+				
 					
 			}
 			catch(IllegalArgumentException ex){

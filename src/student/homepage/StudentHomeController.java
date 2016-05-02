@@ -10,15 +10,12 @@ public class StudentHomeController {
 	public StudentHomeController(StudentView studentView){
 		this.studentView = studentView;
 
-		
 		this.studentView.addAddClassListener(new AddClassListener());
 		this.studentView.addDropClassListener(new DropClassListener());
 		this.studentView.addViewScheduleListener(new ViewScheduleListener());
 		this.studentView.addViewRegistrationStatusListener(new ViewRegistrationStatusListener());
 		this.studentView.addViewGradesListener(new ViewGradesListener());
-		this.studentView.addSearchCoursesListener(new SearchCoursesListener());
-		
-		
+		this.studentView.addSearchCoursesListener(new SearchCoursesListener());	
 	}
 	
 	
