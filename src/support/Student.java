@@ -5,11 +5,11 @@ public class Student extends User {
 	private boolean regStatus;
 	private int credits;
 	private double gpa;
-	private Schedule schedule;
+	private StudentSchedule schedule;
 	
 	
 	public Student(String firstName, String lastName, String username, String password, int userType, int userId,
-			boolean regStatus, int credits, double gpa, Schedule schedule) {
+			boolean regStatus, int credits, double gpa, StudentSchedule schedule) {
 		super(firstName, lastName, username, password, userType, userId);
 		this.regStatus = regStatus;
 		this.credits = credits;
@@ -41,11 +41,11 @@ public class Student extends User {
 		this.gpa = gpa;
 	}
 	
-	public Schedule getSchedule() {
+	public StudentSchedule getSchedule() {
 		return schedule;
 	}
 	
-	public void setSchedule(Schedule schedule) {
+	public void setSchedule(StudentSchedule schedule) {
 		this.schedule = schedule;
 	}
 	

@@ -75,7 +75,7 @@ public class LoginModel {
 					int credits = rs.getInt("credits");
 					ArrayList<String> crsGrades = new ArrayList<String>(Arrays.asList(coursesGrades));
 					ArrayList<String> crs = new ArrayList<String>(Arrays.asList(courses));
-					Schedule sch = new StudentSchedule(crs, credits, 18, crsGrades);
+					StudentSchedule sch = new StudentSchedule(crs, credits, 18, crsGrades);
 					user = new Student(rs.getString("firstname"), rs.getString("lastname"), rs.getString("username")
 							, rs.getString("password"), type, rs.getInt("userid")
 							, rs.getBoolean("regstatus"), credits, rs.getDouble("gpa")

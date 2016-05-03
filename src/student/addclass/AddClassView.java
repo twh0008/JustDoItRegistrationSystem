@@ -7,7 +7,6 @@ public class AddClassView extends JFrame {
 	private JLabel lbCnr = new JLabel("Enter CRN:");
 	private JTextField _Cnr = new JTextField(5);
 	private JButton btCnr = new JButton("Add Course");
-	private JButton btBack = new JButton("Back TO Home");
 	
 	
 	public AddClassView(){
@@ -20,7 +19,6 @@ public class AddClassView extends JFrame {
 		acvPanel.add(lbCnr);
 		acvPanel.add(_Cnr);
 		acvPanel.add(btCnr);
-		acvPanel.add(btBack);
 		
 		this.add(acvPanel);
 		
@@ -32,10 +30,6 @@ public class AddClassView extends JFrame {
 	
 	public void addCnrListener(ActionListener cnrButtonListener){
 		btCnr.addActionListener(cnrButtonListener);
-	}
-	
-	public void AddBackListener(ActionListener backButtonListener){
-		btBack.addActionListener(backButtonListener);
 	}
 	
 	public void displayError(String message){
