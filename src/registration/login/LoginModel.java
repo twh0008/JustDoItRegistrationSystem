@@ -45,7 +45,7 @@ public class LoginModel {
 		try {
 			if(rs.next()){
 				type = rs.getInt("usertype");
-				user = createAcount(db, type);
+				user = createAccount(db, type);
 				
 			}
 		} catch (SQLException e) {
@@ -56,7 +56,7 @@ public class LoginModel {
 		return user;
 	}
 	
-	private User createAcount(DBConnect db, int type){
+	private User createAccount(DBConnect db, int type){
 		ResultSet rs = null;
 		String sql = "SELECT * FROM users WHERE username='" 
 				+ username + "' and password='" + new String(password) + "'";

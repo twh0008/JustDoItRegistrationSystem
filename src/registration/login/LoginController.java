@@ -50,7 +50,7 @@ public class LoginController {
 						case 2:
 							loginView.dispose();
 							Student std = (Student) user;
-							StudentView sView = new StudentView();
+							StudentView sView = new StudentView(std);
 							StudentHomeController sController = new StudentHomeController(sView, std);
 							sView.setVisible(true);
 							break;
@@ -67,9 +67,9 @@ public class LoginController {
 							
 							loginView.dispose();
 							Administrator admin = (Administrator) user;
-							AdminView view = new AdminView();
-							AdminHomeController controller = new AdminHomeController(view, admin);
-							view.setVisible(true);
+							AdminView aView = new AdminView();
+							AdminHomeController aController = new AdminHomeController(aView, admin);
+							aView.setVisible(true);
 							
 							break;
 						default:

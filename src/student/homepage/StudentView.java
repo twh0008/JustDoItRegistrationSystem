@@ -1,7 +1,13 @@
 package student.homepage;
 
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.*;
+
 import javax.swing.*;
+
+import support.Student;
 
 public class StudentView extends JFrame {
 	private JButton btAddClass = new JButton("Add Class");
@@ -10,22 +16,50 @@ public class StudentView extends JFrame {
 	private JButton btViewRegistrationStatus = new JButton("View Registration Status");
 	private JButton btViewGrades = new JButton("View Grades");
 	private JButton btSearchCourses = new JButton("Search Courses");
+	public Student user;
+	public String name;
 	
-	
-	public StudentView(){
-		 JPanel studentPanel = new JPanel();
+	public StudentView(Student std){
+		super("Student");
+		this.user = std;
+		name = user.getFirstName() + " "
+				+ user.getLastName();
+		
+		
+//		 JPanel studentPanel = new JPanel();
 		 
-			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			this.setSize(800, 200);
+			JPanel studentPanel = new JPanel(new GridBagLayout());
+			GridBagConstraints constraints = new GridBagConstraints();
+			constraints.anchor = GridBagConstraints.CENTER;
+			constraints.insets = new Insets(5, 5, 5, 5);
+			constraints.gridx = 0;
+			constraints.gridy = 0;
+			studentPanel.add(btAddClass, constraints);
+			constraints.gridy = 1;
+			studentPanel.add(btDropClass, constraints);
+			constraints.gridy = 2;
+			studentPanel.add(btViewSchedule, constraints);
+			constraints.gridy = 3;
+			studentPanel.add(btViewRegistrationStatus, constraints);
+			constraints.gridy = 4;
+			studentPanel.add(btViewGrades, constraints);
+			constraints.gridy = 5;
+			studentPanel.add(btSearchCourses, constraints);
+			constraints.gridy = 6;
+			pack();
 			
-			studentPanel.add(btAddClass);
-			studentPanel.add(btDropClass);
-			studentPanel.add(btViewSchedule);
-			studentPanel.add(btViewRegistrationStatus);
-			studentPanel.add(btViewGrades);
-			studentPanel.add(btSearchCourses);
+		 
+//			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//			this.setSize(800, 200);
 			
-			this.add(studentPanel);
+//			studentPanel.add(btAddClass);
+//			studentPanel.add(btDropClass);
+//			studentPanel.add(btViewSchedule);
+//			studentPanel.add(btViewRegistrationStatus);
+//			studentPanel.add(btViewGrades);
+//			studentPanel.add(btSearchCourses);
+//			
+			add(studentPanel);
 
 	}
 	
