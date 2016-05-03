@@ -13,11 +13,11 @@ public class ViewGradesModel {
 		
 	}
 	
-	public String[][] processCourses(){
+	public String[][] processGrades(){
 
 		ArrayList<String> courses = student.getSchedule().getCourses();
 		ArrayList<String> grades = student.getSchedule().getCoursesGrades();
-		String[][] tableInfo = new String[2][courses.size()];
+		String[][] tableInfo = new String[courses.size()][2];
 		
 		for(int i = 0; i < courses.size(); i++){
 			tableInfo[i][0] = courses.get(i);

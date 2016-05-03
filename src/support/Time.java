@@ -1,28 +1,28 @@
 package support;
 
 public class Time {
-	private int weekDay;
-	private int time;
+	private String weekDay;
+	private String time;
 	
 	
-	public Time(int weekDay, int time) {
+	public Time(String weekDay, String time) {
 		this.weekDay = weekDay;
 		this.time = time;
 	}
 
-	public int getWeekDay() {
+	public String getWeekDay() {
 		return weekDay;
 	}
 	
-	public void setWeekDay(int weekDay) {
+	public void setWeekDay(String weekDay) {
 		this.weekDay = weekDay;
 	}
 	
-	public int getTime() {
+	public String getTime() {
 		return time;
 	}
 	
-	public void setTime(int time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 	

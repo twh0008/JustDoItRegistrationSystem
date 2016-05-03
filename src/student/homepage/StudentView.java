@@ -20,7 +20,7 @@ public class StudentView extends JFrame {
 	public String name;
 	
 	public StudentView(Student std){
-		super("Student");
+		setTitle(std.getFirstName()+ " Homepage");
 		this.user = std;
 		name = user.getFirstName() + " "
 				+ user.getLastName();
@@ -50,7 +50,7 @@ public class StudentView extends JFrame {
 			
 		 
 //			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//			this.setSize(800, 200);
+			this.setSize(600, 400);
 			
 //			studentPanel.add(btAddClass);
 //			studentPanel.add(btDropClass);

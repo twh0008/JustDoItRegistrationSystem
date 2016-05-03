@@ -17,7 +17,8 @@ public class ViewGradesController {
 	public class GetGradesListener implements ActionListener {
 
 		public void actionPerformed(ActionEvent e) {
-			view.addJTable(model.processCourses());
+			
+			view.addJTable(model.processGrades());
 		}
 
 	}
