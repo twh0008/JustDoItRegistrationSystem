@@ -1,0 +1,27 @@
+PROJECT CHECK LIST:
+
+Admin Modules:
+
+Addcourse: 
+Adduser: 
+Homepage: Complete
+Removecourse: 
+Removeuser: 
+Updateregstatus: 
+
+
+Professor Modules:
+
+Entergrades: 
+Homepage: Complete
+Viewenrollsumm:
+ViewSchedule:
+
+
+Student Modules:
+Addclass:
+Dropclass:
+Homepage: Complete
+Searchcourse:
+Viewgrades:
+ViewRegistrationStatus: Complete
