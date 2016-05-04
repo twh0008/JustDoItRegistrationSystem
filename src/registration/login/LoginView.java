@@ -46,18 +46,7 @@ public class LoginView extends JFrame {
 		add(loginPanel);
 		pack();
 		setLocationRelativeTo(null);
-		
-		
-//		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		this.setSize(800, 200);
-//
-//		loginPanel.add(lbUsername);
-//		loginPanel.add(_username);
-//		loginPanel.add(lbPassword);
-//		loginPanel.add(_password);
-//		loginPanel.add(btLogin);
-//		
-//		this.add(loginPanel);
+	
 		
 	}
 	

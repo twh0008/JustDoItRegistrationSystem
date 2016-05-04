@@ -2,11 +2,7 @@ package support;
 //create separate package?
 //need mysql driver in class path
 //need to have IP added to access list
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Properties;
 
 
@@ -69,7 +65,7 @@ public class DBConnect {
     	}
     }
     /**
-     * Executes an update to database. User for inserts.
+     * Executes an update to database. Used for inserts.
      * @return int,
      */
     
