@@ -25,6 +25,7 @@ public class DropClassModel {
 
 	public boolean DropClass(int crn) {
 		if(!student.isRegStatus()){return false;}
+		String grades = "";
 		DBConnect db = new DBConnect();
 		db.connect();
 		String sql = "SELECT coursecap, coursesize, coursecredits, coursename, studentsenrolled "
@@ -49,8 +50,9 @@ public class DropClassModel {
 		}
 		student.getSchedule().setCredits(student.getSchedule().getCredits()-credits);
 		
-		
+		int indexOfCourse = student.getSchedule().getCourses().indexOf(coursename);
 		student.getSchedule().removeCourse(coursename);
+
 		ArrayList<String> cl = student.getSchedule().getCourses();
 		String newSchedule = "";
 		for (String s : cl)
@@ -66,6 +68,36 @@ public class DropClassModel {
 			}
 			newEnrolled += s + " ";
 		}
+		
+		// Grades get
+		sql = "SELECT grades FROM users WHERE userid='" + student.getUserId() + "'";
+		db.setSqlquery(sql);
+		db.dbExecute();
+		rs = db.getRs();
+		try {
+			if(rs.next()){
+				rs.getString("grades");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String[] gradesArr = grades.split("\\s+");
+		String newGrades = "";
+		gradesArr[indexOfCourse-1] = "-1";
+		
+		for(String s : gradesArr){
+			if(s == "-1"){continue;}
+			newGrades += s + " ";
+		}
+		//Grades update
+		sql = "UPDATE users"
+				+ " SET grades = '" + newGrades + "' WHERE userid='" 
+				+ student.getUserId() + "'";
+		db.setSqlquery(sql);
+		db.dbUpdate();
+		
 		//Update user schedule
 		sql = "UPDATE users"
 				+ " SET schedule = '" + newSchedule + "' WHERE userid='" 

@@ -24,8 +24,8 @@ public class ViewPScheduleModel {
 			System.out.println(tableInfo[i][0]);
 			tableInfo[i][0] = sch.get(i).getCourseName();
 			System.out.println(tableInfo[i][1]);
-			tableInfo[i][2] = sch.get(i).getCourseTime().getWeekDay();
-			tableInfo[i][3] = sch.get(i).getCourseTime().getTime();
+			tableInfo[i][1] = sch.get(i).getCourseTime().getWeekDay();
+			tableInfo[i][2] = sch.get(i).getCourseTime().getTime();
 		}
 		return tableInfo;
 	}

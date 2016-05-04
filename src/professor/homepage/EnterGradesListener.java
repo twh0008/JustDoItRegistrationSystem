@@ -16,9 +16,10 @@ public class EnterGradesListener implements ActionListener {
 	public void actionPerformed(ActionEvent ae) {
 		System.out.println("Button Pressed");
 		EnterGradesView view = new EnterGradesView();
-		EnterGradesModel model = new EnterGradesModel();
+		EnterGradesModel model = new EnterGradesModel(user);
 		EnterGradesController control = new EnterGradesController(view, model);
 
+		view.setVisible(true);
 	}
 
 }

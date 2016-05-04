@@ -18,8 +18,9 @@ public ViewEnrollmentSummaryListener(Professor user) {
 public void actionPerformed(ActionEvent ae) {
 	System.out.println("Button Pressed");
 	ViewEnrollmentSummaryView view = new ViewEnrollmentSummaryView();
-	ViewEnrollmentSummaryModel model = new ViewEnrollmentSummaryModel();
+	ViewEnrollmentSummaryModel model = new ViewEnrollmentSummaryModel(user);
 	ViewEnrollmentSummaryController control = new ViewEnrollmentSummaryController(view, model);
+	view.setVisible(true);
 }
 
 

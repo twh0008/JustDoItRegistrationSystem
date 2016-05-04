@@ -60,6 +60,15 @@ public class AddClassModel {
 		db.setSqlquery(sql);
 		db.dbUpdate();
 		
+		//update grades
+		sql = "UPDATE users"
+				+ " SET grades=( CASE WHEN grades= ''"
+				+ " THEN '" + "_" 
+				+ "' ELSE concat(grades, ' " 
+				+ "_" + "') END) WHERE userid='" +student.getUserId() +"'";
+		db.setSqlquery(sql);
+		db.dbUpdate();
+		
 		//update size of class
 		sql = "UPDATE courses"
 				+ " SET coursesize = '" + (size+1) + "' WHERE courseid='" 
@@ -67,6 +76,8 @@ public class AddClassModel {
 		db.setSqlquery(sql);
 		db.dbUpdate();
 		db.disconnect();
+		
+
 		return true;
 	}
 
