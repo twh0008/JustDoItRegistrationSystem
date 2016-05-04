@@ -16,11 +16,11 @@ public class UpdateRegistrationStatusListener implements ActionListener {
 	
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Button Pressed");
-		updateRegistrationStatusView view = new updateRegistrationStatusView();
-		updateRegistrationStatusModel model = new updateRegistrationStatusModel();
-		updateRegistrationStatusController control = new updateRegistrationStatusController(view, model);
+		UpdateRegistrationStatusView view = new UpdateRegistrationStatusView();
+		UpdateRegistrationStatusModel model = new UpdateRegistrationStatusModel();
+		UpdateRegistrationStatusController control = new UpdateRegistrationStatusController(view, model);
 		
-//		view.setVisible(true);
+		view.setVisible(true);
 	}
 
 }

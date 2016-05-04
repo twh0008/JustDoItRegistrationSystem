@@ -16,11 +16,11 @@ public class RemoveUserListener implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Remove User Btn Pressed");
-		removeUserView view = new removeUserView();
-		removeUserModel model = new removeUserModel();
-		removeUserController control = new removeUserController(view, model);
+		RemoveUserView view = new RemoveUserView();
+		RemoveUserModel model = new RemoveUserModel();
+		RemoveUserController control = new RemoveUserController(view, model);
 		
-
+		view.setVisible(true);
 	}
 
 }

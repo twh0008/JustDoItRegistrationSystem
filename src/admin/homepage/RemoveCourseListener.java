@@ -19,6 +19,8 @@ public class RemoveCourseListener implements ActionListener {
 		RemoveCourseView view = new RemoveCourseView();
 		RemoveCourseModel model = new RemoveCourseModel();
 		RemoveCourseController control = new RemoveCourseController(view, model);
+		
+		view.setVisible(true);
 	}
 
 }
