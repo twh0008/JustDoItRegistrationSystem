@@ -68,7 +68,7 @@ public class LoginModel {
 			rs = db.getRs();
 			try {
 				if(rs.next()){
-					String schedule = rs.getString("schedule");
+					String schedule = rs.getString("schedule").trim();
 					String grades = rs.getString("grades");
 					String[] courses = schedule.split("\\s+");
 					String[] coursesGrades = grades.split("\\s+");
@@ -78,7 +78,7 @@ public class LoginModel {
 					StudentSchedule sch = new StudentSchedule(crs, credits, 18, crsGrades);
 					user = new Student(rs.getString("firstname"), rs.getString("lastname"), rs.getString("username")
 							, rs.getString("password"), type, rs.getInt("userid")
-							, rs.getBoolean("regstatus"), credits, rs.getDouble("gpa")
+							, rs.getBoolean("regstatus"), rs.getDouble("gpa")
 							, sch);
 				}
 			} catch (SQLException e) {

@@ -20,7 +20,7 @@ public class AddClassListener implements ActionListener{
 	public void actionPerformed(ActionEvent ae) {
 		System.out.println("Button CLicked in add");
 		AddClassView view = new AddClassView();
-		AddClassModel model = new AddClassModel();
+		AddClassModel model = new AddClassModel(user);
 		AddClassController control = new AddClassController(view, model);
 		
 		view.setVisible(true);

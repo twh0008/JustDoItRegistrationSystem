@@ -14,7 +14,10 @@ public class Schedule {
 	public ArrayList<String> getCourses() {
 		return courses;
 	}
-
+	
+	public void addCourse(String course){
+		courses.add(course);
+	}
 	public void setCourses(ArrayList<String> courses) {
 		this.courses = courses;
 	}
