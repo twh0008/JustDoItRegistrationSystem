@@ -29,10 +29,10 @@ public class AddCourseController {
 			try {
 				courseName = view.getCourseName();
 				courseCap = view.getSelectedCap();
-				courseCredits = view.getCourseCredits();
-				courseDate = view.getCourseDate();
-				courseTime = view.getCourseTime();
-				courseTerm = view.getCourseTerm();
+				courseCredits = view.getSelectedCredits();
+				courseDate = view.getSelectedDate();
+				courseTime = view.getSelectedTime();
+				courseTerm = view.getSelectedTerm();
 				
 				model.setCourseName(courseName);
 				model.setCourseCap(courseCap);

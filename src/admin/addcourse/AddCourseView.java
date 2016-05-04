@@ -11,19 +11,19 @@ public class AddCourseView extends JFrame {
 	private JLabel lbCourseName = new JLabel("Enter Course Name:");
 	private JTextField _CourseName = new JTextField(20);
 	private JLabel lbCourseCap = new JLabel("Enter Course Capacity:");
-	private JTextField _CourseCap = new JTextField(5);
 	private JLabel lbCourseCredits = new JLabel("Enter Course Credits:");
-	private JTextField _CourseCredits = new JTextField(5);
 	private JLabel lbCourseDate = new JLabel("Enter Course Date:");
-	private JTextField _CourseDate = new JTextField(5);
 	private JLabel lbCourseTime = new JLabel("Enter Course Time:");
-	private JTextField _CourseTime = new JTextField(5);
 	private JLabel lbCourseTerm = new JLabel("Enter Course Term:");
-	private JTextField _CourseTerm = new JTextField(5);
 	private JButton btnAddCourse = new JButton("Add Course");
 	private JButton btnBack = new JButton("Back To Home");
 	
 	JComboBox capCombo;
+	JComboBox creditsCombo;
+	JComboBox dateCombo;
+	JComboBox timeCombo;
+	JComboBox termCombo;
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public AddCourseView() {
 		
 		JPanel addCoursePanel = new JPanel(new GridBagLayout());
@@ -45,7 +45,6 @@ public class AddCourseView extends JFrame {
 		cap.addElement("75");
 		capCombo = new JComboBox(cap);
 		capCombo.setSelectedIndex(0);
-		
 		constraints.gridx = 0;
 		constraints.gridy = 1;
 		addCoursePanel.add(lbCourseCap, constraints);
@@ -56,30 +55,53 @@ public class AddCourseView extends JFrame {
 		constraints.gridx = 0;
 		constraints.gridy = 2;
 		addCoursePanel.add(lbCourseCredits, constraints);
+		DefaultComboBoxModel credits = new DefaultComboBoxModel();
+		credits.addElement("3");
+		credits.addElement("4");
+		creditsCombo = new JComboBox(credits);
+		creditsCombo.setSelectedIndex(0);
 		constraints.gridx = 1;
 		constraints.gridy = 2;
-		addCoursePanel.add(_CourseCredits, constraints);
+		addCoursePanel.add(creditsCombo, constraints);
 		//courseDate
 		constraints.gridx = 0;
 		constraints.gridy = 3;
+		DefaultComboBoxModel date = new DefaultComboBoxModel();
+		date.addElement("MWF");
+		date.addElement("TTR");
+		dateCombo = new JComboBox(date);
 		addCoursePanel.add(lbCourseDate, constraints);
 		constraints.gridx = 1;
 		constraints.gridy = 3;
-		addCoursePanel.add(_CourseDate, constraints);
+		addCoursePanel.add(dateCombo, constraints);
 		//courseTime
 		constraints.gridx = 0;
 		constraints.gridy = 4;
+		DefaultComboBoxModel time = new DefaultComboBoxModel();
+		time.addElement("8");
+		time.addElement("9");
+		time.addElement("10");
+		time.addElement("11");
+		time.addElement("12");
+		time.addElement("1");
+		time.addElement("2");
+		time.addElement("3");
+		timeCombo = new JComboBox(time);
 		addCoursePanel.add(lbCourseTime, constraints);
 		constraints.gridx = 1;
 		constraints.gridy = 4;
-		addCoursePanel.add(_CourseTime, constraints);
+		addCoursePanel.add(timeCombo, constraints);
 		//courseTerm
 		constraints.gridx = 0;
 		constraints.gridy = 5;
+		DefaultComboBoxModel term = new DefaultComboBoxModel();
+		term.addElement("Spring 2016");
+		term.addElement("Fall 2017");
+		termCombo = new JComboBox(term);
 		addCoursePanel.add(lbCourseTerm, constraints);
 		constraints.gridx = 1;
 		constraints.gridy = 5;
-		addCoursePanel.add(_CourseTerm, constraints);
+		addCoursePanel.add(termCombo, constraints);
 		
 		//addUserBtn
 		constraints.gridx = 0;
@@ -100,22 +122,17 @@ public class AddCourseView extends JFrame {
 	public String getSelectedCap(){
 		return (String) capCombo.getSelectedItem();
 	}
-	
-	public String getCourseCredits() {
-		if(_CourseCredits.getText().isEmpty()) throw new IllegalArgumentException();
-		return _CourseCredits.getText();
+	public String getSelectedCredits(){
+		return (String) creditsCombo.getSelectedItem();
 	}
-	public String getCourseDate() {
-		if(_CourseDate.getText().isEmpty()) throw new IllegalArgumentException();
-		return _CourseDate.getText();
+	public String getSelectedDate(){
+		return (String) dateCombo.getSelectedItem();
 	}
-	public String getCourseTime() {
-		if(_CourseTime.getText().isEmpty()) throw new IllegalArgumentException();
-		return _CourseTime.getText();
+	public String getSelectedTime(){
+		return (String) timeCombo.getSelectedItem();
 	}
-	public String getCourseTerm() {
-		if(_CourseTerm.getText().isEmpty()) throw new IllegalArgumentException();
-		return _CourseTerm.getText();
+	public String getSelectedTerm(){
+		return (String) termCombo.getSelectedItem();
 	}
 	
 	public void addNewCourseListener(ActionListener listenForAddCourseButton){
