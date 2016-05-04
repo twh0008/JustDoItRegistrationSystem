@@ -17,7 +17,7 @@ public class ViewScheduleView extends JFrame{
 
 
 	private JLabel lbCourses = new JLabel("Select Term:");
-	private JButton btGetCourses = new JButton("Get Courses");
+	private JButton btGetCourses = new JButton("Get Schedule");
 	JComboBox termCombo;
 	private JPanel panel;
 
