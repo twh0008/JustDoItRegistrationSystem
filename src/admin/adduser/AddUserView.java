@@ -85,28 +85,7 @@ public class AddUserView extends JFrame {
 		setLocationRelativeTo(null);
 		
 	}
-//	public AddUserView(boolean t) {
-//		
-//		if (t == true)
-//		{
-//			JLabel lbAcknowledged = new JLabel("User has been added successfully!");
-//			JPanel addUserAck = new JPanel(new GridBagLayout());
-//			GridBagConstraints constraints = new GridBagConstraints();
-//			constraints.anchor = GridBagConstraints.CENTER;
-//			constraints.insets = new Insets(10, 10, 10, 10);
-//			constraints.gridx = 0;
-//			constraints.gridy = 0;
-//			addUserAck.add(lbAcknowledged, constraints);
-//			JButton btnBack = new JButton("Back to Home");
-//			constraints.gridy = 1;
-//			addUserAck.add(btnBack, constraints);
-//			
-//		} else {
-//			
-//			
-//		}
-//		
-//	}
+
 	public String getFirstName() {
 		if(_FirstName.getText().isEmpty()) throw new IllegalArgumentException();
 		return _FirstName.getText();
@@ -136,8 +115,11 @@ public class AddUserView extends JFrame {
 
 	public void displayError(String message) {
 		JOptionPane.showMessageDialog(this, message, "Error", 
-				JOptionPane.INFORMATION_MESSAGE);
-		
+				JOptionPane.INFORMATION_MESSAGE);	
+	}
+
+	public void displayMessage(String message){
+		JOptionPane.showMessageDialog(this, message, "Success", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 }

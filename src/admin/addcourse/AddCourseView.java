@@ -146,7 +146,9 @@ public class AddCourseView extends JFrame {
 	public void displayError(String message) {
 		JOptionPane.showMessageDialog(this, message, "Error", 
 				JOptionPane.INFORMATION_MESSAGE);
-		
+	}
+	public void displayMessage(String message){
+		JOptionPane.showMessageDialog(this, message, "Success", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 

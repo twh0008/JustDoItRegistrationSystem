@@ -26,7 +26,7 @@ public class AddCourseController {
 			String courseTime = "";
 			String courseTerm = "";
 			
-			try {
+			
 				courseName = view.getCourseName();
 				courseCap = view.getSelectedCap();
 				courseCredits = view.getSelectedCredits();
@@ -41,14 +41,13 @@ public class AddCourseController {
 				model.setCourseTime(courseTime);
 				model.setCourseTerm(courseTerm);
 				
-				//Change this later to bring up acknowledgment
-				if(model.createCourse() == true) {
-					view.dispose();
-				}
 				
-			}	catch(IllegalArgumentException ex){
-				view.displayError("Please fill in ALL of the fields.");	
-			}
+				if(model.createCourse() == true) {
+					view.displayMessage("Added Course Successfully!");
+					view.dispose();
+				} else {
+					view.displayError("Please fill in ALL of the fields.");	
+				}
 				
 			}
 			

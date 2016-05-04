@@ -27,7 +27,7 @@ public class AddUserController {
 			String userType = "";
 			
 			
-			try {
+			
 				userFirst = view.getFirstName();
 				userLast = view.getLastName();
 				userName = view.getUserName();
@@ -42,16 +42,16 @@ public class AddUserController {
 				model.setUserType(userType);
 				
 				
-//				Change this later to bring up acknowledgment
+
 				boolean t = model.createUser();
-				if(t == true) {
-//					AddUserView aView = new AddUserView(t);
+				if (t == true) 
+				{
+					view.displayMessage("Added user!");
 					view.dispose();	
+				} else {
+					view.displayError("Please fill in ALL of the fields.");	
 				}
 				
-			}	catch(IllegalArgumentException ex){
-				view.displayError("Please fill in ALL of the fields.");	
-			}
 				
 			}
 			
