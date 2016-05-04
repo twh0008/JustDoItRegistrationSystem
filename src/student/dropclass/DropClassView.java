@@ -36,11 +36,20 @@ public class DropClassView extends JFrame{
 		return Integer.parseInt(_Cnr.getText());
 	}
 	
-	public void addCnrListener(ActionListener cnrButtonListener){
+	public void addDropCnrListener(ActionListener cnrButtonListener){
 		btCnr.addActionListener(cnrButtonListener);
 	}
 	
 	public void displayError(String message){
 		JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.INFORMATION_MESSAGE);
+	}
+
+	public void clearCRN() {
+		_Cnr.setText("");
+	}
+
+	public void displayMessage(String message) {
+		JOptionPane.showMessageDialog(this, message, "Alert", JOptionPane.INFORMATION_MESSAGE);
+		
 	}
 }

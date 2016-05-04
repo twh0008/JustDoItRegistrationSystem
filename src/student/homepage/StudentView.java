@@ -68,7 +68,7 @@ public class StudentView extends JFrame {
 	}
 	
 	public void addDropClassListener(ActionListener listenForDropClass){
-		btAddClass.addActionListener(listenForDropClass);
+		btDropClass.addActionListener(listenForDropClass);
 	}
 	
 	public void addViewScheduleListener(ActionListener listenForViewSchedule){

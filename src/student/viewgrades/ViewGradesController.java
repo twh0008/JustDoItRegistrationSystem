@@ -17,8 +17,14 @@ public class ViewGradesController {
 	public class GetGradesListener implements ActionListener {
 
 		public void actionPerformed(ActionEvent e) {
-			
-			view.addJTable(model.processGrades());
+		
+			String[][] data = model.processGrades();
+			if(data == null){
+				view.displayError("You don't have anys Courses");
+			}
+			else{
+				view.addJTable(model.processGrades());
+			}
 		}
 
 	}

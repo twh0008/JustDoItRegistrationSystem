@@ -18,6 +18,9 @@ public class Schedule {
 	public void addCourse(String course){
 		courses.add(course);
 	}
+	public void removeCourse(String course){
+		courses.remove(course);
+	}
 	public void setCourses(ArrayList<String> courses) {
 		this.courses = courses;
 	}

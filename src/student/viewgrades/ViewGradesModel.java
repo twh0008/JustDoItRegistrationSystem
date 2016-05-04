@@ -14,7 +14,8 @@ public class ViewGradesModel {
 	}
 	
 	public String[][] processGrades(){
-
+		if(student.getSchedule().getCourses().size() == 0){return null;}
+		if(student.getSchedule().getCoursesGrades().size() == 0){return null;}
 		ArrayList<String> courses = student.getSchedule().getCourses();
 		ArrayList<String> grades = student.getSchedule().getCoursesGrades();
 		String[][] tableInfo = new String[courses.size()][2];
