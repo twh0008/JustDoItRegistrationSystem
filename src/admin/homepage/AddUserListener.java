@@ -19,6 +19,7 @@ public class AddUserListener implements ActionListener {
 		AddUserView view = new AddUserView();
 		AddUserModel model = new AddUserModel();
 		AddUserController control = new AddUserController(view, model);
+		view.setVisible(true);
 
 	}
 
