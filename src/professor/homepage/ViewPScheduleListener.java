@@ -20,9 +20,10 @@ public ViewPScheduleListener(Professor user) {
 		System.out.println("Btn Pressed");
 
 		ViewPScheduleView view = new ViewPScheduleView();
-		ViewPScheduleModel model = new ViewPScheduleModel();
+		ViewPScheduleModel model = new ViewPScheduleModel(user);
 		ViewPScheduleController control = new ViewPScheduleController(view, model);
-
+		
+		view.setVisible(true);
 	}
 
 }
