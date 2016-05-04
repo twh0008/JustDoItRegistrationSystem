@@ -17,6 +17,7 @@ public class AdminHomeController {
 		this.adminView.addRemoveUserListener(new RemoveUserListener(user));
 		this.adminView.addAddUserListener(new AddUserListener(user));
 		this.adminView.addUpdateRegistrationStatusListener(new UpdateRegistrationStatusListener(user));
+		this.adminView.addLogoutListener(new LogoutListener(v));
 		
 	}
 }

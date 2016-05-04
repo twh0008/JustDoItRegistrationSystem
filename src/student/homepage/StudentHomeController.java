@@ -21,6 +21,7 @@ public class StudentHomeController {
 		this.studentView.addViewRegistrationStatusListener(new ViewRegistrationStatusListener(user));
 		this.studentView.addViewGradesListener(new ViewGradesListener(user));
 		this.studentView.addSearchCoursesListener(new SearchCoursesListener(user));	
+		this.studentView.addLogoutListener(new LogoutListener(studentView));
 	}
 	
 	

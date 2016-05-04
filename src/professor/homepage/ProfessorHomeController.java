@@ -4,6 +4,7 @@ import javax.swing.JButton;
 
 import support.Professor;
 
+
 import com.sun.corba.se.impl.encoding.CodeSetConversion.BTCConverter;
 
 public class ProfessorHomeController {
@@ -17,6 +18,7 @@ public class ProfessorHomeController {
 		this.professorView.addViewEnrollmentSummary(new ViewEnrollmentSummaryListener(user));
 		this.professorView.addViewSchedule(new ViewPScheduleListener(user));
 		this.professorView.addEnterGrades(new EnterGradesListener(user));
+		this.professorView.addLogoutListener(new LogoutListener(professorView));
 	}
 	
 	

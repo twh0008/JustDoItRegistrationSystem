@@ -16,6 +16,7 @@ public class StudentView extends JFrame {
 	private JButton btViewRegistrationStatus = new JButton("View Registration Status");
 	private JButton btViewGrades = new JButton("View Grades");
 	private JButton btSearchCourses = new JButton("Search Courses");
+	private JButton btLogout = new JButton("Logout");
 	public Student user;
 	public String name;
 	
@@ -46,7 +47,10 @@ public class StudentView extends JFrame {
 			constraints.gridy = 5;
 			studentPanel.add(btSearchCourses, constraints);
 			constraints.gridy = 6;
+			studentPanel.add(btLogout, constraints);
+			
 			pack();
+			
 			
 		 
 //			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -85,6 +89,14 @@ public class StudentView extends JFrame {
 	
 	public void addSearchCoursesListener(ActionListener listenForSearchCourses){
 		btSearchCourses.addActionListener(listenForSearchCourses);
+	}
+	public void addLogoutListener(ActionListener listenForLogout){
+		btLogout.addActionListener(listenForLogout);
+	}
+
+	public void displayMessage(String message) {
+		JOptionPane.showMessageDialog(this, message, "Success", JOptionPane.INFORMATION_MESSAGE);
+		
 	}
 
 }
