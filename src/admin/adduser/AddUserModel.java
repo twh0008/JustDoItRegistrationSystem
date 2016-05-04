@@ -41,8 +41,8 @@ public class AddUserModel {
 		DBConnect db = new DBConnect();
 		Connection conn = db.connect();
 		
-		String sql = " INSERT INTO `teamredt_justdoit`.`users`(firstname, lastname, username, password, usertype)"
-				+ " values (?,?,?,?,?)";
+		String sql = " INSERT INTO `teamredt_justdoit`.`users`(firstname, lastname, username, password, usertype, schedule, grades)"
+				+ " values (?,?,?,?,?,?,?)";
 		
 		java.sql.PreparedStatement preparedStmt = conn.prepareStatement(sql);
 	      preparedStmt.setString (1, userFirst);
@@ -50,6 +50,8 @@ public class AddUserModel {
 	      preparedStmt.setString (3, userName);
 	      preparedStmt.setString (4, userPass);
 	      preparedStmt.setString (5, userType);
+	      preparedStmt.setString (6, "");
+	      preparedStmt.setString (7, "");
 	      
 	      preparedStmt.execute();
 	      conn.close();
