@@ -28,7 +28,7 @@ public class AddCourseController {
 			
 			try {
 				courseName = view.getCourseName();
-				courseCap = view.getCourseCap();
+				courseCap = view.getSelectedCap();
 				courseCredits = view.getCourseCredits();
 				courseDate = view.getCourseDate();
 				courseTime = view.getCourseTime();

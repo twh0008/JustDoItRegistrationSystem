@@ -23,6 +23,7 @@ public class AddCourseView extends JFrame {
 	private JButton btnAddCourse = new JButton("Add Course");
 	private JButton btnBack = new JButton("Back To Home");
 	
+	JComboBox capCombo;
 	public AddCourseView() {
 		
 		JPanel addCoursePanel = new JPanel(new GridBagLayout());
@@ -37,12 +38,20 @@ public class AddCourseView extends JFrame {
 		constraints.gridx = 1;
 		addCoursePanel.add(_CourseName, constraints);
 		//courseCap
+		DefaultComboBoxModel cap = new DefaultComboBoxModel();
+		cap.addElement("25");
+		cap.addElement("30");
+		cap.addElement("50");
+		cap.addElement("75");
+		capCombo = new JComboBox(cap);
+		capCombo.setSelectedIndex(0);
+		
 		constraints.gridx = 0;
 		constraints.gridy = 1;
 		addCoursePanel.add(lbCourseCap, constraints);
 		constraints.gridx = 1;
 		constraints.gridy = 1;
-		addCoursePanel.add(_CourseCap, constraints);
+		addCoursePanel.add(capCombo, constraints);
 		//courseCredits
 		constraints.gridx = 0;
 		constraints.gridy = 2;
@@ -88,10 +97,10 @@ public class AddCourseView extends JFrame {
 		if(_CourseName.getText().isEmpty()) throw new IllegalArgumentException();
 		return _CourseName.getText();
 	}
-	public String getCourseCap() {
-		if(_CourseCap.getText().isEmpty()) throw new IllegalArgumentException();
-		return _CourseCap.getText();
+	public String getSelectedCap(){
+		return (String) capCombo.getSelectedItem();
 	}
+	
 	public String getCourseCredits() {
 		if(_CourseCredits.getText().isEmpty()) throw new IllegalArgumentException();
 		return _CourseCredits.getText();
