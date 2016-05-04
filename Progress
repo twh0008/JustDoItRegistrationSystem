@@ -19,9 +19,10 @@ ViewSchedule:
 
 
 Student Modules:
-Addclass:
+View Schedule:
+Addclass: Complete
 Dropclass:
 Homepage: Complete
-Searchcourse: Working on
+Searchcourse: Complete
 Viewgrades: Complete
 ViewRegistrationStatus: Complete
