@@ -1,9 +1,11 @@
 PROJECT CHECK LIST:
 
+***NOTE*** Program does not properly close. Will leave javaw.exe still open in processes
+
 Admin Modules:
 
-Addcourse: Working on - Taylor
-Adduser: 
+Addcourse: Complete
+Adduser: Complete
 Homepage: Complete
 Removecourse: 
 Removeuser: 
